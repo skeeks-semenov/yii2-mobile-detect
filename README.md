@@ -41,3 +41,8 @@ like this:
     echo \Yii::$app->mobileDetect->isTablet();
     echo \Yii::$app->mobileDetect->isDesctop();
     ```
+
+    ```php
+    //version >= 1.0.1
+    echo \skeeks\yii2\mobiledetect\MobileDetect::getInstance()->isMobile();
+    ```

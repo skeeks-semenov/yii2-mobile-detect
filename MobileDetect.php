@@ -2,7 +2,7 @@
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  * @link http://skeeks.com/
- * @copyright 2010 SkeekS (ÑêèêÑ)
+ * @copyright 2010 SkeekS (Ð¡ÐºÐ¸ÐºÐ¡)
  * @date 30.06.2015
  */
 namespace skeeks\yii2\mobiledetect;
@@ -28,6 +28,24 @@ class MobileDetect extends Component
     {
         parent::init();
         $this->_mobileDetect = new \Mobile_Detect();
+    }
+
+    /**
+     * @var self
+     */
+    static protected $_instance = null;
+
+    /**
+     * @return self
+     */
+    static public function getInstance()
+    {
+        if (self::$_instance === null)
+        {
+            self::$_instance = new self();
+        }
+
+        return self::$_instance;
     }
 
     /**
