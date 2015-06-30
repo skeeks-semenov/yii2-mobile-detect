@@ -11,15 +11,18 @@ use yii\base\Component;
 require_once(\Yii::getAlias('@vendor/mobiledetect/mobiledetectlib/Mobile_Detect.php'));
 
 /**
- * @method (bool) isMobile();
- * @method (bool) isTablet();
+ * @method (bool) isMobile()
+ * @method (bool) isTablet()
  *
  * Class MobileDetect
  * @package skeeks\yii2\mobiledetect
  */
 class MobileDetect extends Component
 {
-    protected $mobileDetect;
+    /**
+     * @var \Mobile_Detect
+     */
+    protected $_mobileDetect;
 
     public function init()
     {
@@ -34,12 +37,10 @@ class MobileDetect extends Component
      */
     public function __call($name, $arguments)
     {
-        return call_user_func_array([$this->mobileDetect, $name], $arguments);
+        return call_user_func_array([$this->_mobileDetect, $name], $arguments);
     }
 
     /**
-     * Компьютер?
-     *
      * @return bool
      */
     public function isDescktop()
