@@ -27,7 +27,7 @@ class MobileDetect extends Component
     public function init()
     {
         parent::init();
-        $this->mobileDetect = new \Mobile_Detect();
+        $this->_mobileDetect = new \Mobile_Detect();
     }
 
     /**
