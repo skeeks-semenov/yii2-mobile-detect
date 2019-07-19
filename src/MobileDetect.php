@@ -1,21 +1,26 @@
 <?php
 /**
+ * @link https://cms.skeeks.com/
+ * @copyright Copyright (c) 2010 SkeekS
+ * @license https://cms.skeeks.com/license/
  * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.06.2015
  */
+
 namespace skeeks\yii2\mobiledetect;
+
 use yii\base\Component;
 
 require_once(\Yii::getAlias('@vendor/mobiledetect/mobiledetectlib/Mobile_Detect.php'));
 
 /**
- * @method (bool) isMobile()
- * @method (bool) isTablet()
+ * @method (bool)isMobile()
+ * @method (bool)isTablet()
  *
- * Class MobileDetect
- * @package skeeks\yii2\mobiledetect
+ * @property  (bool) isMobile
+ * @property  (bool) isTablet
+ * @property  (bool) isDesktop
+ *
+ * @author Semenov Alexander <semenov@skeeks.com>
  */
 class MobileDetect extends Component
 {
@@ -40,8 +45,7 @@ class MobileDetect extends Component
      */
     static public function getInstance()
     {
-        if (self::$_instance === null)
-        {
+        if (self::$_instance === null) {
             self::$_instance = new self();
         }
 
@@ -72,11 +76,34 @@ class MobileDetect extends Component
      */
     public function isDesktop()
     {
-        if ($this->isMobile() || $this->isTablet())
-        {
+        if ($this->isMobile() || $this->isTablet()) {
             return false;
         }
 
         return true;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getIsMobile()
+    {
+        return $this->isMobile();
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getIsTablet()
+    {
+        return $this->isTablet();
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getIsDesktop()
+    {
+        return $this->isDesktop();
     }
 }

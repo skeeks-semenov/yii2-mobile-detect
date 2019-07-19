@@ -3,7 +3,8 @@
 
 1.0.2
 -----------------
-  * fixed https://github.com/skeeks-semenov/yii2-mobile-detect/issues/1
+  * Add properties isMobile isDesktop isTablet
+  * Fixed https://github.com/skeeks-semenov/yii2-mobile-detect/issues/1
   
 1.0.1
 -----------------
