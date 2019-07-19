@@ -3,6 +3,10 @@
 This extension provides an Yii2 component wrapper for [Mobile_Detect](http://mobiledetect.net/) PHP class and
 can be used to detect whether a device is mobile one in your Yii2 application.
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/skeeks/yii2-mobile-detect.svg)](https://packagist.org/packages/skeeks/yii2-mobile-detect)
+[![Total Downloads](https://img.shields.io/packagist/dt/skeeks/yii2-mobile-detect.svg)](https://packagist.org/packages/skeeks/yii2-mobile-detect)
+
+
 ## Installation
 
 The preferred way to install this extension is through [Composer](http://getcomposer.org/download/).
@@ -16,7 +20,7 @@ php composer.phar require --prefer-dist skeeks/yii2-mobile-detect
 or add
 
 ```json
-"skeeks/yii2-mobile-detect": "*"
+"skeeks/yii2-mobile-detect": "^1.0.2"
 ```
 
 to the `require` section of your `composer.json` file.
